@@ -17,12 +17,47 @@
 //     =====`-.____`.___ \_____/___.-`___.-'=====
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-const server = require('./src/app.js');
-const { conn } = require('./src/db.js');
+// const server = require('./src/app.js');
+// const { conn } = require('./src/db.js');
+
+// // Syncing all the models at once.
+// conn.sync({ force: true }).then(() => {
+//   server.listen(3001, () => {
+//     console.log('%s listening at 3001'); // eslint-disable-line no-console
+//   });
+// });
+
+const { default: axios } = require("axios");
+const server = require("./src/app.js");
+const { conn } = require("./src/db.js");
+const { Genre } = conn.models;
+const { API_KEY } = process.env;
+
+const getGenres = async () => {
+  try {
+    let allGenres = await axios.get(
+      `https://api.rawg.io/api/genres?key=${API_KEY}`
+    );
+
+    allGenres.data.results.forEach((e) => {
+      Genre.findOrCreate({
+        where: {
+          name: e.name,
+        },
+      });
+    });
+  } catch (error) {
+    console.error(error.message);
+  }
+};
+
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
   server.listen(3001, () => {
-    console.log('%s listening at 3001'); // eslint-disable-line no-console
+    console.log("%s listening at 3001"); // eslint-disable-line no-console
   });
+
+  getGenres();
 });
+
