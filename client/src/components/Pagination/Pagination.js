@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { paginate } from "../../actions/index";
+import './Pagination.css'
 
 function Pagination({ cardsPerPage, totalCards }) {
   const dispatch = useDispatch();
@@ -21,14 +22,14 @@ function Pagination({ cardsPerPage, totalCards }) {
   }
 
   return (
-    <div>
-      <ul>
-        {page !== 1 ? <button
+    <div className="pag">
+      <ul className="pagination">
+        {page !== 1 ? <button className="pageButton"
           onClick={() => previusPage(page)}
         >◀</button> : <></>}
         {pageNumbers.map((number) => (
           <li key={number}>
-            <a
+            <a className="links"
               onClick={() => {
                 dispatch(paginate(number));
               }}
@@ -38,7 +39,7 @@ function Pagination({ cardsPerPage, totalCards }) {
             </a>
           </li>
         ))}
-        {page >=7 ? <></> : <button
+        {page >=7 ? <></> : <button className="pageButton"
           onClick={() => nextPage(page, Math.ceil(totalCards / cardsPerPage))}
           >▶</button> }
       </ul>

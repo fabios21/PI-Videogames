@@ -1,0 +1,51 @@
+.general {
+    background-image: url('https://images2.alphacoders.com/602/thumb-1920-602223.jpg');
+    background-attachment: fixed;
+    background-size: 1500px;
+    padding: 50px;
+}
+
+.description {
+    background-color: rgba(255, 255, 255, 0.356);
+    margin: 50px;
+    border-radius: 15px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 50px;
+    text-align: center;
+}
+
+.descriptionblack {
+    background-color: rgba(0, 0, 0, 0.356);
+    margin: 50px;
+    border-radius: 15px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 50px;
+    text-align: center;
+}
+
+.dimg {
+    width: 500px;
+}
+
+.img {
+    border-radius: 15px;
+}
+
+.loading {
+    width: 800px;
+}
+
+.x {
+    text-align: right;
+    margin-right: 0px;
+}
+
+.btn-x {
+    background-color: rgba(255, 255, 255, 0.247);
+    border-radius: 3px;
+    /* border: none; */
+    width: 50px;
+    height: 30px;
+}

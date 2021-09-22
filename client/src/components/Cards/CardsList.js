@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import Cards from './Cards'
-import cargando from "./cargando.gif"
+import Cards from './Cards';
+import './CardsList.css';
 
 export default function List() {
     const [ videogames , setVideogames ] = useState([])
@@ -19,8 +19,7 @@ export default function List() {
   
 
     return (
-        <div>
-            {/* <img id="primero" src="http://www.gifde.com/gif/otros/decoracion/cargando-loading/cargando-loading-039.gif"/> */}
+        <div className="contenedor5">
             <Cards cards={ videogames } />
         </div>
     )

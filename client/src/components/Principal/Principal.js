@@ -28,20 +28,24 @@ const Principal = () => {
     getVideogames();
   }, []);
 
-  const { loading, totalVg } = useSelector((store) => store);
+  const selec = useSelector((store) => store);
 
   return (
     <>
       <div className='gamingzone'>
-        <Link to="/">
-          <button>LandingPage</button>
-        </Link>
-        <NavBar />
-
-        <div>
-          <Selectors />
+        <div className="div-btn-lp">
+          <Link to="/">
+            <button className="btn-lp">▲ LandingPage</button>
+          </Link>
         </div>
-        <div>
+        <div className="navbar">
+          <NavBar/>
+        </div>
+
+        <div className="selectors">
+          <Selectors/>
+        </div>
+        <div className="cards">
           <Route exact path="/videogames" render={() => <List />} />
         </div>
       </div>

@@ -1,3 +1,24 @@
 .gamingzone {
-    background-color: black;
+    background-image: url('https://www.gstatic.com/stadia/gamers/landing_page/assets/v2_static_hero-trimmed.jpg');
+    background-attachment: fixed;
+    margin: 5px;
+    color:white;
+    padding: 30px;
+}
+
+.cards {
+    border-radius: 6px;
+    margin: 30px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.btn-lp {
+    background-color: rgba(91, 217, 255, 0.63);
+    border: none;
+    color: white;
+    width: 120px;
+    height: 20px;
 }

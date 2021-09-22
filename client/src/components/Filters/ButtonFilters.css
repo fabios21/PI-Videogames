@@ -1,0 +1,10 @@
+.div-order {
+    background-color: rgba(255, 255, 255, 0.473);
+    width: 400px;
+    height: 35px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}

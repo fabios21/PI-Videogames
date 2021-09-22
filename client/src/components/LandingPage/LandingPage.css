@@ -1,7 +1,53 @@
-body {
+.bg {
+    height: 600px;
+    color: white;
     background-image: url('https://wallpapercave.com/wp/wp6082408.jpg');
     background-size: cover;
-    /* background-image: url('https://images.alphacoders.com/694/thumb-1920-694756.jpg'); */
-    color: white;
+}
+
+body {
+    display:flex;
+    flex-direction:column;
+    background-color: rgb(39, 1, 51);
+}
+
+.play {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 370px;
+}
+
+.title {
+    font-family: American Captain;
+    font-size: 50px;
     text-align: center;
+}
+
+.img-play {
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+    width: 60px;
+    height: 60px;
+    display: flex;
+}
+
+.div-img-play {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    background-color: rgba(255, 255, 255, 0.767);
+    border-radius: 6px;
+    width: 165px;
+    height: 60px;
+    align-items: center;
+    text-decoration: none;
+}
+
+.h2-lp {
+    font-size: 40px;
+    text-align: center;
+    align-items: center;
 }

@@ -1,0 +1,11 @@
+.newgame {
+    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(233, 233, 233, 0.363)), url('https://images4.alphacoders.com/783/thumb-1920-783472.jpg');
+    background-size: auto;
+    height: 800px;
+}
+
+.form-newgame {
+    background-color: rgba(255, 255, 255, 0.356);
+    margin: 50px;
+    border-radius: 15px;
+}

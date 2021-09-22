@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { clearSearch, loadingGame } from '../../actions/index';
 import Card from '../Cards/Card';
 import Pagination from '../Pagination/Pagination'
+import './Cards.css'
 
 
 const Cards = ({cards}) => {
@@ -31,17 +32,14 @@ const Cards = ({cards}) => {
       </div>
     } else {
       return (
-        <div>
-            <Pagination cardsPerPage={videogamesPerPage} totalCards={games.length} />
-
-
+        <div className="cards">
           {currentGames.map((videogame, index) => {
             return (
               <Card key={index} videogame={videogame} />
             )
           })}
           
-            <Pagination cardsPerPage={videogamesPerPage} totalCards={games.length} />
+          <Pagination cardsPerPage={videogamesPerPage} totalCards={games.length} />
           
         </div>
       )

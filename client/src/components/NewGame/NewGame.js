@@ -1,18 +1,19 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import './NewGame.css'
 
 const NewGame = () => {
   const genres = useSelector((store) => store.genres);
 
   return (
-    <>
+    <div className="newgame">
       <div>
         <Link to="/videogames">
           <button> 🔙 Principal</button>
         </Link>
       </div>
-      <form action="http://localhost:3001/videogames" method="POST">
+      <form className="form-newgame" action="http://localhost:3001/videogames" method="POST">
         <div>
           <div>
             <div>
@@ -110,7 +111,7 @@ const NewGame = () => {
           </div>
         </div>
       </form>
-    </>
+    </div>
   );
 };
 

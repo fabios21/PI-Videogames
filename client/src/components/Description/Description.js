@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import parse from "html-react-parser";
+import './Description.css'
 
 const Description = () => {
   function principal() {
@@ -24,29 +25,29 @@ const Description = () => {
 
   if (isLoading) {
     return (
-      <div>
-        <h1>Loading</h1>
+      <div className="general">
+        <div className="descriptionblack">
+          <img className="loading" src="https://i.pinimg.com/originals/4a/83/87/4a838762167c369ae5cb9643118000a8.gif" />
+        </div>
       </div>
     );
   }
 
   if (id.includes("-")) {
     return (
-      <>
-        <div>
-          <div>
-            {
-              <button onClick={principal}>
+      <div className="general">
+        <div className="description">
+          <div className="x">
+              <button  className="btn-x" onClick={principal}>
                 X
               </button>
-            }
           </div>
           <div>
             <div>
               <div>
                 <h2>{data.name} </h2>
-                <div>
-                  <img src={data.background_image} alt="" />
+                <div className="dimg">
+                  <img classname="img" src={data.background_image} alt="" width="800"/>
                 </div>
                 <h3>Rating</h3>
                 <p>{data.rating}</p>
@@ -68,27 +69,25 @@ const Description = () => {
             </div>
           </div>
         </div>
-      </>
+      </div>
     );
   } else {
     return (
-      <>
-        <div>
+      <div className="general">
+        <div className="description">
           <div></div>
           <div></div>
-          <div>
-            {
-              <button onClick={principal}>
+          <div className="x">
+              <button className="btn-x" onClick={principal}>
                 X
               </button>
-            }
           </div>
           <div>
             <div>
               <div>
                 <h2>{data.name} </h2>
-                <div>
-                  <img src={data.background_image} alt="" />
+                <div className="dimg">
+                  <img  classname="img" src={data.background_image} alt="" width="1000" />
                 </div>
                 <h3>Rating</h3>
                 <h2>{data.rating}</h2>
@@ -112,7 +111,7 @@ const Description = () => {
             </div>
           </div>
         </div>
-      </>
+      </div>
     );
   }
   

@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch,useSelector } from "react-redux";
 import Filters  from "../Filters/Filters";
+import './ButtonFilters.css';
 
 const ButtonFilters = () => {
   const dispatch = useDispatch();
@@ -17,7 +18,7 @@ const handleF = (type) =>{
 
   return (
     <>
-      <div>
+      <div className="div-order">
           <button
             onClick={() => handleF(az)}> Name: A-Z </button>
           <button
