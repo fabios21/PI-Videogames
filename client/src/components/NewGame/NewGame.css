@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "American Captain";
+    src: url("//db.onlinewebfonts.com/t/a6bec1c4ef2d2fd1bac5a6951f5f32a3.woff2");
+}
+
 .newgame {
     background-image: linear-gradient(rgba(0,0,0,0.8),rgba(233, 233, 233, 0.363)), url('https://images4.alphacoders.com/783/thumb-1920-783472.jpg');
     background-size: auto;
@@ -6,6 +11,80 @@
 
 .form-newgame {
     background-color: rgba(255, 255, 255, 0.356);
-    margin: 50px;
+    margin: 30px;
     border-radius: 15px;
+    padding: 20px;
+    font-family: American Captain;
+}
+
+.form-newgame h1 {
+    text-align: center;
+    font-size: 70px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    text-shadow: -2px -2px 1px rgb(255, 255, 255), 2px 2px 1px rgb(245, 245, 245), -2px 2px 1px rgb(255, 255, 255), 2px -2px 1px rgb(255, 255, 255);
+}
+
+.div {
+    display: flex;
+    flex-direction: row;
+}
+
+.div div input{
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 5px;
+    border: 1px solid #39c;
+}
+
+.div div select {
+    width: 200px;
+}
+
+.div div textarea {
+    height: 120px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.div label {
+    font-size: 20px;
+}
+
+.div-1 {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    padding: 0px;
+}
+
+.div-1 button {
+    margin-top: 30px;
+}
+
+.div-1 div {
+    margin-top: 30px;
+}
+
+.div-2 {
+    margin-left: 30px;
+    width: 250px;
+}
+
+.div-3 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    width: 200px;
+}
+
+.div-n {
+    background-color: black;
+    width: 500px;
+    margin: 0 40px 30px 20px;
+    color: white;
+    font-size: 100px;
+    text-align: center;
+    align-content: center;
+    padding-top: 75px;
 }

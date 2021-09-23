@@ -20,13 +20,13 @@ const handleF = (type) =>{
     <>
       <div className="div-order">
           <button
-            onClick={() => handleF(az)}> Name: A-Z </button>
+             className="button"onClick={() => handleF(az)}> Name: A-Z </button>
           <button
-            onClick={() => handleF(za)}> Name: Z-A </button>
+             className="button" onClick={() => handleF(za)}> Name: Z-A </button>
           <button
-            onClick={() => handleF(asc)}> Rating ↑-↓	</button>
+             className="button" onClick={() => handleF(asc)}> Rating ↑-↓	</button>
           <button
-            onClick={() => handleF(des)}> Rating ↓-↑ </button>
+             className="button" onClick={() => handleF(des)}> Rating ↓-↑ </button>
         </div>
     </>
   );

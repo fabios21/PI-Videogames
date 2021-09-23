@@ -15,9 +15,10 @@ const CreatedFilter = () => {
       <>
           <div>
           <select
+            className="button"
             value={optionCreated}
             onChange={(e) => handleCreated(e)} >
-            <option value="all">All</option>
+            <option value="all">Origin/All</option>
             <option value="true">Created</option>
             <option value="false">Originals</option>
           </select>

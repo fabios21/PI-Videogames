@@ -7,7 +7,9 @@ const Card = ({ videogame }) => {
     <div className="lo">
       {videogame && (
         <div className="card" key={videogame.id}>
-          <img className="imgcard" src={videogame.background_image} alt="" />
+          <Link to={"/description/" + videogame.id}>
+            <img className="imgcard" src={videogame.background_image} alt="" />
+          </Link>
           <div className="content">
             <h2 className="vgname">{videogame.name}</h2>
             <div className="content2">
@@ -16,14 +18,9 @@ const Card = ({ videogame }) => {
                 {videogame.genres &&
                   videogame.genres.map((g, index) => {
                     while (index < 3)
-                      return <p>{g.name} </p>;
+                      return <p>-{g.name}-</p>;
                 })}
               </div>
-            </div>
-            <div className="button">
-              <Link to={"/description/" + videogame.id}>
-                <button className="details">Details</button>
-              </Link>
             </div>
           </div>
         </div>

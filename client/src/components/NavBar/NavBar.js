@@ -6,7 +6,8 @@ const NavBar = () => {
     <>
       <div>
         <div>
-          <h4 className="navbarh4">Videogames Catalogue</h4>
+          <h4 className="navbarh4">Videogames</h4>
+          <h5  className="navbarh5">Catalogue</h5>
         </div>
       </div>
     </>

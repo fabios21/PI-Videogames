@@ -1,0 +1,21 @@
+.form-search {
+    background-color: rgb(255, 255, 255);
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    padding: 0px;
+}
+
+.search {
+    border: none;
+    height: 30px;
+    margin: 0px;
+}
+
+.search-submit {
+    border: none;
+    height: 32px;
+    margin: 0px;
+
+}

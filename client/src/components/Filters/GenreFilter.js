@@ -19,10 +19,11 @@ const GenreFilter = () => {
     <>
         <div>
         <select
+          className="button"
           value={optionGenre}
           onChange={(e) => handleGenre(e)}
         >
-          <option value="all">Genres</option>
+          <option value="all">Genres/All</option>
           {genres.map((genre) => {
             return <option key={genre.name} value={genre.name}>{genre.name} </option>;
           })}

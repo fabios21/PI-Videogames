@@ -23,7 +23,7 @@ export default function Selectors() {
               </div>
             <div>
             <Link className="addnewgame" to="/newgame">
-              <button>Add New Game</button>
+              <button className="button">Add New Game</button>
             </Link>
           </div>
             </div>        

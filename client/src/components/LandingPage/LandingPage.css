@@ -3,12 +3,14 @@
     color: white;
     background-image: url('https://wallpapercave.com/wp/wp6082408.jpg');
     background-size: cover;
+    margin: 0px;
 }
 
 body {
     display:flex;
     flex-direction:column;
     background-color: rgb(39, 1, 51);
+    padding: 0px;
 }
 
 .play {
@@ -23,6 +25,7 @@ body {
     font-family: American Captain;
     font-size: 50px;
     text-align: center;
+    margin: 0px;
 }
 
 .img-play {
@@ -50,4 +53,6 @@ body {
     font-size: 40px;
     text-align: center;
     align-items: center;
+    font-family: American Captain;
+    margin-top: 27px;
 }

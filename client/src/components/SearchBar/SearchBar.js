@@ -6,6 +6,7 @@ import {
   clearSearch,
   resetFilters,
 } from "../../actions/index";
+import './SearchBar.css';
 
 
 const SearchBar = () => {
@@ -39,16 +40,17 @@ const handleSubmit = (e) =>  {
     <>
       <div>
         <form
-          onSubmit={(e) => handleSubmit(e)}
+          className="form-search" onSubmit={(e) => handleSubmit(e)}
         >
-          <input
+          <input 
+            className="search"
             type="text"
             name="search"
-            placeholder="Buscar..."
+            placeholder="Search..."
             value={search}
             onChange={(e) => handleInputChange(e)}
           />
-          <button type="submit"> Search 🔎
+          <button className="search-submit" type="submit"> Search 🔎
           </button>
         </form>
       </div>

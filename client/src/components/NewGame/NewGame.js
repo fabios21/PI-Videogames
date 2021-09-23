@@ -14,13 +14,12 @@ const NewGame = () => {
         </Link>
       </div>
       <form className="form-newgame" action="http://localhost:3001/videogames" method="POST">
-        <div>
-          <div>
-            <div>
-              <div>
-                <button type="submit">
-                  Add Game
-                </button>
+        <h1>Creat Videogame</h1>
+        <div className="div">
+              <div className="div-n">
+                New Videogame
+              </div>
+              <div className="div-1">
                 <input
                   type="text"
                   name="name"
@@ -35,7 +34,7 @@ const NewGame = () => {
                   type="text"
                   name="img"
                   id="TheImg"
-                  placeholder="Cover url..."
+                  placeholder="Img url..."
                 />
                 <input
                   type="date"
@@ -52,10 +51,11 @@ const NewGame = () => {
                     <option value="5">5</option>
                   </select>
                 </div>
-              </div>
-            </div>
+                <button type="submit">
+                  Add Game
+                </button>
           </div>
-          <div>
+          <div  className="div-2">
             <h3>Select genres</h3>
             <div>
               {genres.map((genre) => {
@@ -68,46 +68,84 @@ const NewGame = () => {
               })}
             </div>
           </div>
-          <div>
+          <div  className="div-3">
             <h3>Select platforms</h3>
-            <input type="checkbox" name="platforms" value="PC" />
-            <label htmlFor="platforms">PC</label>
-            <input type="checkbox" name="platforms" value="PlayStation 5" />
-            <label htmlFor="platforms">PlayStation 5</label>
-            <input type="checkbox" name="platforms" value="PlayStation 4" />
-            <label htmlFor="platforms">PlayStation 4</label>
-            <input type="checkbox" name="platforms" value="Xbox One" />
-            <label htmlFor="platforms">Xbox One</label>
-            <input type="checkbox" name="platforms" value="Nintendo Switch" />
-            <label htmlFor="platforms">Nintendo Switch</label>
-            <input type="checkbox" name="platforms" value="Xbox Series S/X" />
-            <label htmlFor="platforms">Xbox Series S/X</label>
-            <input type="checkbox" name="platforms" value="iOS" />
-            <label htmlFor="platforms">iOS</label>
-            <input type="checkbox" name="platforms" value="Android" />
-            <label htmlFor="platforms">Android</label>
-            <input type="checkbox" name="platforms" value="Nintendo 3DS" />
-            <label htmlFor="platforms">Nintendo 3DS</label>
-            <input type="checkbox" name="platforms" value="Nintendo DS" />
-            <label htmlFor="platforms">Nintendo DS</label>
-            <input type="checkbox" name="platforms" value="Nintendo DSi" />
-            <label htmlFor="platforms">Nintendo DSi</label>
-            <input type="checkbox" name="platforms" value="macOS" />
-            <label htmlFor="platforms">macOS</label>
-            <input type="checkbox" name="platforms" value="Linux" />
-            <label htmlFor="platforms">Linux</label>
-            <input type="checkbox" name="platforms" value="Xbox 360" />
-            <label htmlFor="platforms">Xbox 360</label>
-            <input type="checkbox" name="platforms" value="PlayStation 3" />
-            <label htmlFor="platforms">PlayStation 3</label>
-            <input type="checkbox" name="platforms" value="Xbox" />
-            <label htmlFor="platforms">Xbox</label>
-            <input type="checkbox" name="platforms" value="PlayStation" />
-            <label htmlFor="platforms">PlayStation</label>
-            <input type="checkbox" name="platforms" value="PS Vita" />
-            <label htmlFor="platforms">PS Vita</label>
-            <input type="checkbox" name="platforms" value="Wii U" />
-            <label htmlFor="platforms">Wii U</label>         
+            <div>
+              <input type="checkbox" name="platforms" value="PC"/>
+              <label htmlFor="platforms">PC</label>
+            </div>
+            <div>
+              <input type="checkbox" name="platforms" value="PlayStation 5 "/>
+              <label htmlFor="platforms">PlayStation 5</label>
+            </div>
+            <div>
+              <input type="checkbox" name="platforms" value="PlayStation 4"/>
+              <label htmlFor="platforms">PlayStation 4</label>
+            </div>
+            <div>
+              <input type="checkbox" name="platforms" value="Xbox One"/>
+              <label htmlFor="platforms">Xbox One</label>
+            </div>
+            <div>
+              <input type="checkbox" name="platforms" value="Nintendo Switch" />
+              <label htmlFor="platforms">Nintendo Switch</label>
+            </div>
+            <div>
+              <input type="checkbox" name="platforms" value="Xbox Series S/X" />
+              <label htmlFor="platforms">Xbox Series S/X</label>
+            </div>
+            <div>
+              <input type="checkbox" name="platforms" value="iOS" />
+              <label htmlFor="platforms">iOS</label>
+            </div>
+            <div>
+              <input type="checkbox" name="platforms" value="Android" />
+              <label htmlFor="platforms">Android</label>
+            </div>
+            <div>
+              <input type="checkbox" name="platforms" value="Nintendo 3DS" />
+              <label htmlFor="platforms">Nintendo 3DS</label>
+            </div>
+            <div>
+              <input type="checkbox" name="platforms" value="Nintendo DS" />
+              <label htmlFor="platforms">Nintendo DS</label>
+            </div>
+            <div>
+              <input type="checkbox" name="platforms" value="Nintendo DSi" />
+              <label htmlFor="platforms">Nintendo DSi</label>
+            </div>
+            <div>
+              <input type="checkbox" name="platforms" value="macOS" />
+              <label htmlFor="platforms">macOS</label>
+            </div>
+            <div>
+              <input type="checkbox" name="platforms" value="Linux" />
+              <label htmlFor="platforms">Linux</label>
+            </div>
+            <div>
+              <input type="checkbox" name="platforms" value="Xbox 360" />
+              <label htmlFor="platforms">Xbox 360</label>
+            </div>
+            <div>
+              <input type="checkbox" name="platforms" value="PlayStation 3" />
+              <label htmlFor="platforms">PlayStation 3</label>
+            </div>
+            <div>
+              <input type="checkbox" name="platforms" value="Xbox" />
+              <label htmlFor="platforms">Xbox</label>
+            </div>
+            <div>
+              <input type="checkbox" name="platforms" value="PlayStation" />
+              <label htmlFor="platforms">PlayStation</label>
+            </div>
+            <div>
+              <input type="checkbox" name="platforms" value="PS Vita" />
+              <label htmlFor="platforms">PS Vita</label>
+            </div>
+            <div>
+              <input type="checkbox" name="platforms" value="Wii U" />
+              <label htmlFor="platforms">Wii U</label>
+            </div> 
           </div>
         </div>
       </form>
