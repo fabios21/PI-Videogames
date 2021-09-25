@@ -8,9 +8,9 @@ const NewGame = () => {
 
   return (
     <div className="newgame">
-      <div>
-        <Link to="/videogames">
-          <button> 🔙 Principal</button>
+      <div className="div-back">
+        <Link className="btn-back" to="/videogames">
+          <button> ↩ Principal</button>
         </Link>
       </div>
       <form className="form-newgame" action="http://localhost:3001/videogames" method="POST">
@@ -25,11 +25,13 @@ const NewGame = () => {
                   name="name"
                   placeholder="Name..."
                 />
+                <p className="required">*Required</p>
                 <textarea
                   type="text"
                   name="description"
                   placeholder="Description..."
                 />
+                <p className="required">*Required</p>
                 <input
                   type="text"
                   name="img"
@@ -51,7 +53,7 @@ const NewGame = () => {
                     <option value="5">5</option>
                   </select>
                 </div>
-                <button type="submit">
+                <button className="btn-add" type="submit">
                   Add Game
                 </button>
           </div>
@@ -70,6 +72,7 @@ const NewGame = () => {
           </div>
           <div  className="div-3">
             <h3>Select platforms</h3>
+            <p className="required">*Required</p>
             <div>
               <input type="checkbox" name="platforms" value="PC"/>
               <label htmlFor="platforms">PC</label>

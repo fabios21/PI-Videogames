@@ -34,7 +34,7 @@
     display: flex;
     position: fixed-bottom;
     width: 300px;
-    justify-content: space-between;
+    justify-content: center;
     bottom: 100px;
     left: 40%;
     font-family: "Lexend", sans-serif;
