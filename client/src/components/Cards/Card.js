@@ -8,7 +8,7 @@ const Card = ({ videogame }) => {
       {videogame && (
         <div className="card" key={videogame.id}>
           <Link to={"/description/" + videogame.id}>
-            <img className="imgcard" src={videogame.background_image} alt="" />
+            <img className="imgcard" src={videogame.background_image || "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/xbox-series-x-gaming-console-1612972422.gif"} alt="" />
           </Link>
           <div className="content">
             <h2 className="vgname">{videogame.name}</h2>

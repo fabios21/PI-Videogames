@@ -1,10 +1,85 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useState } from "react";
+import axios from "axios"
 import { Link } from "react-router-dom";
 import './NewGame.css'
 
 const NewGame = () => {
-  const genres = useSelector((store) => store.genres);
+  const [errors, setErrors] = useState({ form: 'Please, complete the form' });
+    const [form, setForm] = useState({
+        name: '',
+        description: '',
+        releaseDate: '',
+        rating: 0,
+        img: '',
+        genres: [],
+        platforms: []
+    });
+
+    const handleChange = e => {
+        if (e.target.parentNode.parentNode.id === 'genres') {
+            if (e.target.checked) {
+                setForm(prevState => ({
+                    ...prevState,
+                    genres: form.genres.concat(e.target.value)
+                }))
+            } else {
+                setForm(prevState => ({
+                    ...prevState,
+                    genres: form.genres.filter(x => e.target.value !== x)
+                }))
+            }
+        }
+        if (e.target.parentNode.parentNode.id === 'platforms') {
+            if (e.target.checked) {
+                setForm(prevState => ({
+                    ...prevState,
+                    platforms: form.platforms.concat(e.target.name)
+                }))
+            } else {
+                setForm(prevState => ({
+                    ...prevState,
+                    platforms: form.platforms.filter(x => e.target.name !== x)
+                }))
+            }
+        }
+        if (e.target.type !== 'checkbox') {
+            setForm(prevState => ({
+                ...prevState,
+                [e.target.name]: e.target.value
+            }))
+        }
+        setErrors(validate({
+            ...form,
+            [e.target.name]: e.target.value
+        }))
+    }
+    const validate = form => {
+        let errors = {};
+        if (!form.name) {
+            errors.name = 'Name is required';
+        } 
+        if (!form.description) {
+            errors.description = 'Description is required';
+        }
+        if (!form.rating) {
+            errors.rating = 'Rating is required';
+        }
+        return errors;
+    }
+    const handleSubmit = e => {
+        e.preventDefault()
+        validate(form);
+        let checkboxsErrors = []
+        if (form.genres.length < 1) checkboxsErrors.push('Genres is required');
+        if (form.platforms.length < 1) checkboxsErrors.push('Platforms is required');
+        if (Object.values(errors).length || checkboxsErrors.length) {
+            return alert(Object.values(errors).concat(checkboxsErrors).join('\n'));
+        }
+        axios.post('http://localhost:3001/videogames', form)
+        alert(`Videogame "${form.name}" created succesfully`)
+        window.location.href = 'http://localhost:3000/videogames'
+    }
 
   return (
     <div className="newgame">
@@ -13,7 +88,7 @@ const NewGame = () => {
           <button> ↩ Principal</button>
         </Link>
       </div>
-      <form className="form-newgame" action="http://localhost:3001/videogames" method="POST">
+      <form className="form-newgame" onSubmit={handleSubmit} onChange={handleChange}>
         <h1>Creat Videogame</h1>
         <div className="div">
               <div className="div-n">
@@ -22,24 +97,26 @@ const NewGame = () => {
               <div className="div-1">
                 <input
                   type="text"
+                  id="name"
                   name="name"
                   placeholder="Name..."
                 />
-                <p className="required">*Required</p>
                 <textarea
                   type="text"
+                  id="description"
                   name="description"
                   placeholder="Description..."
                 />
-                <p className="required">*Required</p>
                 <input
                   type="text"
+                  id="img"
                   name="img"
                   id="TheImg"
                   placeholder="Img url..."
                 />
                 <input
                   type="date"
+                  id="released"
                   name="released"
                   placeholder="released..."
                 />
@@ -56,99 +133,164 @@ const NewGame = () => {
                 <button className="btn-add" type="submit">
                   Add Game
                 </button>
-          </div>
-          <div  className="div-2">
+              </div>
+          <div id="genres" className="div-2">
             <h3>Select genres</h3>
             <div>
-              {genres.map((genre) => {
-                return (
-                  <div key={genre.id}>
-                    <input type="checkbox" name="genres" value={genre.id} />
-                    <label htmlFor="genres">{genre.name}</label>
-                  </div>
-                );
-              })}
+              <input type="checkbox" name="Action" value="1" id="Action"/>
+              <label htmlFor="Action">Action</label>
+            </div>
+            <div>
+              <input type="checkbox" name="Indie" value="2" id="Indie"/>
+              <label htmlFor="Indie">Indie</label>
+            </div>
+            <div>
+              <input type="checkbox" name="Adventure" value="3" id="Adventure"/>
+              <label htmlFor="Adventure">Adventure</label>
+            </div>
+            <div>
+              <input type="checkbox" name="RPG" value="4" id="RPG"/>
+              <label htmlFor="RPG">RPG</label>
+            </div>
+            <div>
+              <input type="checkbox" name="Puzzle" value="5" id="Puzzle"/>
+              <label htmlFor="Puzzle">Puzzle</label>
+            </div>
+            <div>
+              <input type="checkbox" name="Strategy" value="6" id="Strategy"/>
+              <label htmlFor="Strategy">Strategy</label>
+            </div>
+            <div>
+              <input type="checkbox" name="Arcade" value="7" id="Arcade"/>
+              <label htmlFor="Arcade">Arcade</label>
+            </div>
+            <div>
+              <input type="checkbox" name="Casual" value="8" id="Casual"/>
+              <label htmlFor="Casual">Casual</label>
+            </div>
+            <div>
+              <input type="checkbox" name="Shooter" value="6" id="Shooter"/>
+              <label htmlFor="Shooter">Shooter</label>
+            </div>
+            <div>
+              <input type="checkbox" name="Simulation" value="8" id="Simulation"/>
+              <label htmlFor="Simulation">Simulation</label>
+            </div>
+            <div>
+              <input type="checkbox" name="Platformer" value="9" id="Platformer"/>
+              <label htmlFor="Platformer">Platformer</label>
+            </div>
+            <div>
+              <input type="checkbox" name="Racing" value="10" id="Racing"/>
+              <label htmlFor="platforms">Racing</label>
+            </div>
+            <div>
+              <input type="checkbox" name="Massively-Multiplayer" value="11" id="Massively-Multiplayer"/>
+              <label htmlFor="Massively-Multiplayer">Massively-Multiplayer</label>
+            </div>
+            <div>
+              <input type="checkbox" name="Family" value="12" id="Family" />
+              <label htmlFor="Family">Family</label>
+            </div>
+            <div>
+              <input type="checkbox" name="Sports" value="13" id="Sports" />
+              <label htmlFor="Sports">Sports</label>
+            </div>
+            <div>
+              <input type="checkbox" name="Fighting" value="14" id="Fighting"/>
+              <label htmlFor="Fighting">Fighting</label>
+            </div>
+            <div>
+              <input type="checkbox" name="Board Games" value="15" id="Board Games"/>
+              <label htmlFor="Board Games">Board Games</label>
+            </div>
+            <div>
+              <input type="checkbox" name="Educational" value="16" id="Educational"/>
+              <label htmlFor="Educational">Educational</label>
+            </div>
+            <div>
+              <input type="checkbox" name="Card" value="17" id="Card"/>
+              <label htmlFor="Card">Card</label>
             </div>
           </div>
-          <div  className="div-3">
+          <div id="platforms" className="div-3" require>
             <h3>Select platforms</h3>
-            <p className="required">*Required</p>
             <div>
-              <input type="checkbox" name="platforms" value="PC"/>
-              <label htmlFor="platforms">PC</label>
+              <input type="checkbox" name="PC" id="PC"/>
+              <label htmlFor="PC">PC</label>
             </div>
             <div>
-              <input type="checkbox" name="platforms" value="PlayStation 5 "/>
-              <label htmlFor="platforms">PlayStation 5</label>
+              <input type="checkbox" name="PlayStation 5" id="PlayStation 5 "/>
+              <label htmlFor="PlayStation 5">PlayStation 5</label>
             </div>
             <div>
-              <input type="checkbox" name="platforms" value="PlayStation 4"/>
-              <label htmlFor="platforms">PlayStation 4</label>
+              <input type="checkbox" name="PlayStation 4" id="PlayStation 4"/>
+              <label htmlFor="PlayStation 4">PlayStation 4</label>
             </div>
             <div>
-              <input type="checkbox" name="platforms" value="Xbox One"/>
-              <label htmlFor="platforms">Xbox One</label>
+              <input type="checkbox" name="Xbox One" id="Xbox One"/>
+              <label htmlFor="Xbox One">Xbox One</label>
             </div>
             <div>
-              <input type="checkbox" name="platforms" value="Nintendo Switch" />
-              <label htmlFor="platforms">Nintendo Switch</label>
+              <input type="checkbox" name="Nintendo Switch" id="Nintendo Switch" />
+              <label htmlFor="Nintendo Switch">Nintendo Switch</label>
             </div>
             <div>
-              <input type="checkbox" name="platforms" value="Xbox Series S/X" />
-              <label htmlFor="platforms">Xbox Series S/X</label>
+              <input type="checkbox" name="Xbox Series S/X" id="Xbox Series S/X" />
+              <label htmlFor="Xbox Series S/X">Xbox Series S/X</label>
             </div>
             <div>
-              <input type="checkbox" name="platforms" value="iOS" />
-              <label htmlFor="platforms">iOS</label>
+              <input type="checkbox" name="iOS" id="iOS" />
+              <label htmlFor="iOS">iOS</label>
             </div>
             <div>
-              <input type="checkbox" name="platforms" value="Android" />
-              <label htmlFor="platforms">Android</label>
+              <input type="checkbox" name="Android" id="Android" />
+              <label htmlFor="Android">Android</label>
             </div>
             <div>
-              <input type="checkbox" name="platforms" value="Nintendo 3DS" />
-              <label htmlFor="platforms">Nintendo 3DS</label>
+              <input type="checkbox" name="Nintendo 3DS" id="Nintendo 3DS" />
+              <label htmlFor="Nintendo 3DS">Nintendo 3DS</label>
             </div>
             <div>
-              <input type="checkbox" name="platforms" value="Nintendo DS" />
-              <label htmlFor="platforms">Nintendo DS</label>
+              <input type="checkbox" name="Nintendo DS" id="Nintendo DS" />
+              <label htmlFor="Nintendo DS">Nintendo DS</label>
             </div>
             <div>
-              <input type="checkbox" name="platforms" value="Nintendo DSi" />
-              <label htmlFor="platforms">Nintendo DSi</label>
+              <input type="checkbox" name="Nintendo DSi" id="Nintendo DSi" />
+              <label htmlFor="Nintendo DSi">Nintendo DSi</label>
             </div>
             <div>
-              <input type="checkbox" name="platforms" value="macOS" />
-              <label htmlFor="platforms">macOS</label>
+              <input type="checkbox" name="macOS" id="macOS" />
+              <label htmlFor="macOS">macOS</label>
             </div>
             <div>
-              <input type="checkbox" name="platforms" value="Linux" />
-              <label htmlFor="platforms">Linux</label>
+              <input type="checkbox" name="Linux" id="Linux" />
+              <label htmlFor="Linux">Linux</label>
             </div>
             <div>
-              <input type="checkbox" name="platforms" value="Xbox 360" />
-              <label htmlFor="platforms">Xbox 360</label>
+              <input type="checkbox" name="Xbox 360" id="Xbox 360" />
+              <label htmlFor="Xbox 360">Xbox 360</label>
             </div>
             <div>
-              <input type="checkbox" name="platforms" value="PlayStation 3" />
-              <label htmlFor="platforms">PlayStation 3</label>
+              <input type="checkbox" name="PlayStation 3" id="PlayStation 3" />
+              <label htmlFor="PlayStation 3">PlayStation 3</label>
             </div>
             <div>
-              <input type="checkbox" name="platforms" value="Xbox" />
-              <label htmlFor="platforms">Xbox</label>
+              <input type="checkbox" name="Xbox" id="Xbox" />
+              <label htmlFor="Xbox">Xbox</label>
             </div>
             <div>
-              <input type="checkbox" name="platforms" value="PlayStation" />
-              <label htmlFor="platforms">PlayStation</label>
+              <input type="checkbox" name="PlayStation" id="PlayStation" />
+              <label htmlFor="PlayStation">PlayStation</label>
             </div>
             <div>
-              <input type="checkbox" name="platforms" value="PS Vita" />
-              <label htmlFor="platforms">PS Vita</label>
+              <input type="checkbox" name="PS Vita" id="PS Vita" />
+              <label htmlFor="PS Vita">PS Vita</label>
             </div>
             <div>
-              <input type="checkbox" name="platforms" value="Wii U" />
-              <label htmlFor="platforms">Wii U</label>
-            </div> 
+              <input type="checkbox" name="Wii U" id="Wii U" />
+              <label htmlFor="Wii U">Wii U</label>
+            </div>
           </div>
         </div>
       </form>

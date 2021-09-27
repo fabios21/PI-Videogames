@@ -48,7 +48,7 @@ const Description = () => {
                 <h2>{data.name} </h2>
                 <div className="container">
                   <div className="dimg">
-                    <img  classname="img" src={data.background_image} alt="" width="500" />
+                    <img  classname="img" src={data.background_image || "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/xbox-series-x-gaming-console-1612972422.gif"} alt="" width="500" />
                   </div>
                   <div className="div-r">
                     <div className="div-r1">

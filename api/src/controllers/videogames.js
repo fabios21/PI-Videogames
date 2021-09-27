@@ -15,6 +15,7 @@ async function getAllVideogames(req, res, next) {
       const info = await axios.get(
         `https://api.rawg.io/api/games?key=${API_KEY}&search=${name}`
       );
+      
       const apiVideogames = info.data.results;
 
       let apiGames = apiVideogames.map((game) => {
@@ -31,6 +32,7 @@ async function getAllVideogames(req, res, next) {
         return videoGame;
       });
       videogamesData = videogamesData.concat(apiGames);
+      console.log("videogamesData", videogamesData)
     } catch (error) {
       next(error);
     }
@@ -63,7 +65,8 @@ async function getAllVideogames(req, res, next) {
     } catch (error) {
       next(error);
     }
-  }
+  } 
+
   try {
     for (let i = 0; i < 5; i++) {
       const info = await axios.get(`${pages[i]}`);

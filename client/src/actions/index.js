@@ -19,7 +19,13 @@ export const searchGame = (name) => async (dispatch) => {
     `http://localhost:3001/videogames?search=${name}`
   );
   const videogames = await results.data;
-  if (results.status === 200) {
+
+  if (videogames.length === 0) {
+    alert("¡The videogame entered does not exist!");
+    dispatch({ 
+      type: "SEARCH_GAME", 
+      payload: videogames });
+  } else if (results.status === 200) {
     dispatch({ 
       type: "SEARCH_GAME", 
       payload: videogames });
@@ -27,6 +33,7 @@ export const searchGame = (name) => async (dispatch) => {
     dispatch({ 
       type: "SEARCH_GAME", 
       payload: [] });
+      
   }
 };
 

@@ -26,7 +26,6 @@ const handleSubmit = (e) =>  {
   dispatch(loadingGame(true));
   if (search.length > 0) {
     dispatch(searchGame(search));
-    
     dispatch(resetFilters());
   } else {
     dispatch(clearSearch([]));
