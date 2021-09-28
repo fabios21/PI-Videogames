@@ -11,7 +11,7 @@ const Description = () => {
 
   const { id } = useParams();
   const [data, setData] = useState({});
-  const [isLoading, setLoading] = useState(true);
+  const [Loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios
@@ -24,7 +24,7 @@ const Description = () => {
   }, []);
   
 
-  if (isLoading) {
+  if (Loading) {
     return (
       <div className="general">
         <div className="descriptionblack">

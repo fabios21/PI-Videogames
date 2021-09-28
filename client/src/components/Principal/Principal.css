@@ -14,11 +14,3 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
-
-.btn-lp {
-    background-color: rgba(91, 217, 255, 0.63);
-    border: none;
-    color: white;
-    width: 120px;
-    height: 20px;
-}

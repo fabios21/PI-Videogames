@@ -7,13 +7,21 @@
 .navbarh4 {
     font-family: American Captain;
     font-size: 70px;
-    margin: 30px 0 0px 480px;
+    margin: 5px 0 0px 480px;
     text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
 }
 
 .navbarh5 {
   font-family: American Captain;
   font-size: 50px;
-  margin: 0px 0 50px 530px;
+  margin: 0px 0 20px 530px;
   text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
+}
+
+.btn-lp {
+  background-color: rgba(91, 217, 255, 0.63);
+  border: none;
+  color: white;
+  width: 120px;
+  height: 20px;
 }

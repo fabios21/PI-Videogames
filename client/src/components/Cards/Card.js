@@ -4,7 +4,7 @@ import './Card.css';
 
 const Card = ({ videogame }) => {
   return (
-    <div className="lo">
+    <div>
       {videogame && (
         <div className="card" key={videogame.id}>
           <Link to={"/description/" + videogame.id}>
@@ -15,8 +15,7 @@ const Card = ({ videogame }) => {
             <div className="content2">
               <h3 className="h3">Genres:</h3>
               <div className="genres">
-                {videogame.genres &&
-                  videogame.genres.map((g, index) => {
+                {videogame.genres.map((g, index) => {
                     while (index < 3)
                       return <p>-{g.name}-</p>;
                 })}

@@ -17,8 +17,8 @@ function Pagination({ cardsPerPage, totalCards }) {
     if (page > 1) dispatch(paginate(page - 1));
   }
 
-  function nextPage(page, finalPage) {
-    if (page < finalPage) dispatch(paginate(page + 1));
+  function nextPage(page, lastPage) {
+    if (page < lastPage) dispatch(paginate(page + 1));
   }
 
   return (
@@ -33,7 +33,6 @@ function Pagination({ cardsPerPage, totalCards }) {
               onClick={() => {
                 dispatch(paginate(number));
               }}
-              href="#!"
             >
               {number}
             </a>

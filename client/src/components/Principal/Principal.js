@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Route, Link } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 import axios from "axios";
 import {
@@ -28,25 +27,19 @@ const Principal = () => {
     getVideogames();
   }, []);
 
-  const selec = useSelector((store) => store);
+  const {} = useSelector((store) => store);
 
   return (
     <>
       <div className='gamingzone'>
-        <div className="div-btn-lp">
-          <Link to="/">
-            <button className="btn-lp">▲ LandingPage</button>
-          </Link>
-        </div>
         <div className="navbar">
           <NavBar/>
         </div>
-
         <div className="selectors">
           <Selectors/>
         </div>
         <div className="cards">
-          <Route exact path="/videogames" render={() => <List />} />
+          <List />
         </div>
       </div>
     </>

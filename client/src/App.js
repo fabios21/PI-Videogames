@@ -1,8 +1,8 @@
+import { Route, Switch } from "react-router-dom";
 import LandingPage from "./components/LandingPage/LandingPage";
 import Principal from "./components/Principal/Principal";
-import { Route, Switch } from "react-router-dom";
-import Description from "./components/Description/Description";
 import NewGame from "./components/NewGame/NewGame";
+import Description from "./components/Description/Description";
 
 function App() {
   return (

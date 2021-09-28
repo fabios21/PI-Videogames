@@ -11,8 +11,7 @@ const initialState = {
     filters: {
       order: "", 
       origen: "",
-      genre: "", 
-      platform: "",
+      genre: ""
     },
   };
   
@@ -55,14 +54,6 @@ const initialState = {
           return {
             ...state,
             videogames: action.payload
-              
-          }
-        };
-        case "FILTER_PLATFORM": {
-          return {
-            ...state,
-            videogames: action.payload
-              
           }
         };
         case "RESET_FILTER": {

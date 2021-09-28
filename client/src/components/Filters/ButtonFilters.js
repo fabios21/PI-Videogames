@@ -12,8 +12,8 @@ const ButtonFilters = () => {
  
 const Games = useSelector(store=> store.videogames);
 
-const handleF = (type) =>{ 
-  return dispatch(Filters(Games,type)) 
+const handleF = (type) => { 
+  return dispatch(Filters(Games, type)) 
 }
 
   return (

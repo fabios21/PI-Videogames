@@ -1,4 +1,4 @@
-export default function Filters(Games,order) {
+export default function Filters(Games, order) {
   
   return function(dispatch){
     var Vg;

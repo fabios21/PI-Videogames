@@ -6,7 +6,7 @@ const axios = require("axios");
 async function getAllVideogames(req, res, next) {
   const name = req.query.search;
 
-  let apiVideogames = [];
+  let allVideogames = [];
   const pages = [`https://api.rawg.io/api/games?key=${API_KEY}`];
   if (name) {
     let videogamesData = [];
@@ -31,8 +31,9 @@ async function getAllVideogames(req, res, next) {
         };
         return videoGame;
       });
+      
       videogamesData = videogamesData.concat(apiGames);
-      console.log("videogamesData", videogamesData)
+
     } catch (error) {
       next(error);
     }
@@ -60,8 +61,11 @@ async function getAllVideogames(req, res, next) {
           },
         ],
       });
+
       videogamesData = videogamesData.concat(dbVideogames);
+
       return res.status(200).json(videogamesData);
+
     } catch (error) {
       next(error);
     }
@@ -86,8 +90,9 @@ async function getAllVideogames(req, res, next) {
         return gameFromApi;
       });
 
-      apiVideogames = apiVideogames.concat(gamesFromApi);
+      allVideogames = allVideogames.concat(gamesFromApi);
     }
+
     const dbVideogames = await Videogame.findAll({
       attributes: [
         "id",
@@ -108,8 +113,9 @@ async function getAllVideogames(req, res, next) {
       ],
     });
 
-    apiVideogames = apiVideogames.concat(dbVideogames);
-    res.status(200).json(apiVideogames);
+    allVideogames = allVideogames.concat(dbVideogames);
+
+    res.status(200).json(allVideogames);
   } catch (error) {
     next(error);
   }
@@ -139,11 +145,7 @@ async function createVideogame(req, res, next) {
       created,
     });
 
-    (await genres) && newVideogame.setGenres(genres);
-
-    const id = newVideogame.id;
-
-    return res.redirect(`http://localhost:3000/description/${id}`);
+    newVideogame.setGenres(genres);
 
   } catch (error) {
     next(error);

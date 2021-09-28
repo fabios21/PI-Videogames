@@ -9,7 +9,7 @@ const NewGame = () => {
     const [form, setForm] = useState({
         name: '',
         description: '',
-        releaseDate: '',
+        released: '',
         rating: 0,
         img: '',
         genres: [],
@@ -19,33 +19,33 @@ const NewGame = () => {
     const handleChange = e => {
         if (e.target.parentNode.parentNode.id === 'genres') {
             if (e.target.checked) {
-                setForm(prevState => ({
-                    ...prevState,
+                setForm(State => ({
+                    ...State,
                     genres: form.genres.concat(e.target.value)
                 }))
             } else {
-                setForm(prevState => ({
-                    ...prevState,
+                setForm(State => ({
+                    ...State,
                     genres: form.genres.filter(x => e.target.value !== x)
                 }))
             }
         }
         if (e.target.parentNode.parentNode.id === 'platforms') {
             if (e.target.checked) {
-                setForm(prevState => ({
-                    ...prevState,
+                setForm(State => ({
+                    ...State,
                     platforms: form.platforms.concat(e.target.name)
                 }))
             } else {
-                setForm(prevState => ({
-                    ...prevState,
+                setForm(State => ({
+                    ...State,
                     platforms: form.platforms.filter(x => e.target.name !== x)
                 }))
             }
         }
         if (e.target.type !== 'checkbox') {
-            setForm(prevState => ({
-                ...prevState,
+            setForm(State => ({
+                ...State,
                 [e.target.name]: e.target.value
             }))
         }
@@ -74,11 +74,11 @@ const NewGame = () => {
         if (form.genres.length < 1) checkboxsErrors.push('Genres is required');
         if (form.platforms.length < 1) checkboxsErrors.push('Platforms is required');
         if (Object.values(errors).length || checkboxsErrors.length) {
-            return alert(Object.values(errors).concat(checkboxsErrors).join('\n'));
-        }
-        axios.post('http://localhost:3001/videogames', form)
-        alert(`Videogame "${form.name}" created succesfully`)
-        window.location.href = 'http://localhost:3000/videogames'
+            return alert(Object.values(errors).concat(checkboxsErrors).join('\n'))
+        };
+        axios.post('http://localhost:3001/videogames', form);
+        alert(`Videogame "${form.name}" created succesfully`);
+        window.location.href = 'http://localhost:3000/videogames';
     }
 
   return (
@@ -109,7 +109,6 @@ const NewGame = () => {
                 />
                 <input
                   type="text"
-                  id="img"
                   name="img"
                   id="TheImg"
                   placeholder="Img url..."

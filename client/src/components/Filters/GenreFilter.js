@@ -6,7 +6,7 @@ import { filterGenre } from "../../actions/index";
 const GenreFilter = () => {
   const dispatch = useDispatch();
   const [optionGenre, setOptionGenre] = useState(null);
-  const { genres } = useSelector((store) => store);
+  const { genres } = useSelector(store => store);
 
   const Games = useSelector(store=> store.allGames);
 
@@ -18,16 +18,17 @@ const GenreFilter = () => {
   return (
     <>
         <div>
-        <select
-          className="button"
-          value={optionGenre}
-          onChange={(e) => handleGenre(e)}
-        >
-          <option value="all">Genres/All</option>
-          {genres.map((genre) => {
-            return <option key={genre.name} value={genre.name}>{genre.name} </option>;
-          })}
-        </select>
+          <select
+            className="button"
+            value={optionGenre}
+            onChange={(e) => handleGenre(e)}
+          >
+            <option value="all">Genres/All</option>
+            {genres.map((genre) => {
+              return <option key={genre.name} value={genre.name}>{genre.name} 
+              </option>
+            })}
+          </select>
         </div>
     </>
   );
