@@ -27,7 +27,7 @@ const Principal = () => {
     getVideogames();
   }, []);
 
-  const {} = useSelector((store) => store);
+  useSelector(store => store);
 
   return (
     <>

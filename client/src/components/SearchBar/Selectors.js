@@ -1,10 +1,10 @@
-import React from 'react'
-import ButtonFilters from '../Filters/ButtonFilters'
-import GenreFilter from '../Filters/GenreFilter'
-import SearchBar from './SearchBar'
-import CreatedFilter from '../Filters/CreatedFilter'
-import {Link} from "react-router-dom"
-import './Selectors.css'
+import React from "react";
+import ButtonFilters from "../Filters/ButtonFilters";
+import GenreFilter from "../Filters/GenreFilter";
+import SearchBar from "./SearchBar";
+import CreatedFilter from "../Filters/CreatedFilter";
+import {Link} from "react-router-dom";
+import "./Selectors.css";
 
 
 export default function Selectors() {

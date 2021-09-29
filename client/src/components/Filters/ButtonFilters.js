@@ -10,11 +10,11 @@ const ButtonFilters = () => {
   const asc = "asc";
   const des = "des"
  
-const Games = useSelector(store=> store.videogames);
+  const Games = useSelector(store=> store.videogames);
 
-const handleF = (type) => { 
-  return dispatch(Filters(Games, type)) 
-}
+  const handleF = (type) => { 
+    return dispatch(Filters(Games, type)) 
+  }
 
   return (
     <>

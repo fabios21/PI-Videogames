@@ -168,47 +168,47 @@ const NewGame = () => {
               <label htmlFor="Casual">Casual</label>
             </div>
             <div>
-              <input type="checkbox" name="Shooter" value="6" id="Shooter"/>
+              <input type="checkbox" name="Shooter" value="9" id="Shooter"/>
               <label htmlFor="Shooter">Shooter</label>
             </div>
             <div>
-              <input type="checkbox" name="Simulation" value="8" id="Simulation"/>
+              <input type="checkbox" name="Simulation" value="10" id="Simulation"/>
               <label htmlFor="Simulation">Simulation</label>
             </div>
             <div>
-              <input type="checkbox" name="Platformer" value="9" id="Platformer"/>
+              <input type="checkbox" name="Platformer" value="11" id="Platformer"/>
               <label htmlFor="Platformer">Platformer</label>
             </div>
             <div>
-              <input type="checkbox" name="Racing" value="10" id="Racing"/>
+              <input type="checkbox" name="Racing" value="12" id="Racing"/>
               <label htmlFor="platforms">Racing</label>
             </div>
             <div>
-              <input type="checkbox" name="Massively-Multiplayer" value="11" id="Massively-Multiplayer"/>
+              <input type="checkbox" name="Massively-Multiplayer" value="13" id="Massively-Multiplayer"/>
               <label htmlFor="Massively-Multiplayer">Massively-Multiplayer</label>
             </div>
             <div>
-              <input type="checkbox" name="Family" value="12" id="Family" />
+              <input type="checkbox" name="Family" value="14" id="Family" />
               <label htmlFor="Family">Family</label>
             </div>
             <div>
-              <input type="checkbox" name="Sports" value="13" id="Sports" />
+              <input type="checkbox" name="Sports" value="15" id="Sports" />
               <label htmlFor="Sports">Sports</label>
             </div>
             <div>
-              <input type="checkbox" name="Fighting" value="14" id="Fighting"/>
+              <input type="checkbox" name="Fighting" value="16" id="Fighting"/>
               <label htmlFor="Fighting">Fighting</label>
             </div>
             <div>
-              <input type="checkbox" name="Board Games" value="15" id="Board Games"/>
+              <input type="checkbox" name="Board Games" value="17" id="Board Games"/>
               <label htmlFor="Board Games">Board Games</label>
             </div>
             <div>
-              <input type="checkbox" name="Educational" value="16" id="Educational"/>
+              <input type="checkbox" name="Educational" value="18" id="Educational"/>
               <label htmlFor="Educational">Educational</label>
             </div>
             <div>
-              <input type="checkbox" name="Card" value="17" id="Card"/>
+              <input type="checkbox" name="Card" value="19" id="Card"/>
               <label htmlFor="Card">Card</label>
             </div>
           </div>
