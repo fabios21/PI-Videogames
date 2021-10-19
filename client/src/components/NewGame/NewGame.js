@@ -76,9 +76,10 @@ const NewGame = () => {
         if (Object.values(errors).length || checkboxsErrors.length) {
             return alert(Object.values(errors).concat(checkboxsErrors).join('\n'))
         };
-        axios.post('http://localhost:3001/videogames', form);
+        axios.post('/videogames', form);
+        console.log('consol de formulario', form)
         alert(`Videogame "${form.name}" created succesfully`);
-        window.location.href = 'http://localhost:3000/videogames';
+        // window.location.href = 'http://localhost:3000/videogames';
     }
 
   return (
