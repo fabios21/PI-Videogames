@@ -22,7 +22,9 @@ const { default: axios } = require("axios");
 const server = require("./src/app.js");
 const { conn } = require("./src/db.js");
 const { Genre } = conn.models;
-const { API_KEY } = process.env;
+const { API_KEY, PORT } = process.env;
+
+const PORT = PORT;
 
 const getGenres = async () => {
   try {
