@@ -7,7 +7,7 @@ async function getAllVideogames(req, res, next) {
   const name = req.query.search;
 
   let allVideogames = [];
-  const pages = [`https://api.rawg.io/api/games?key=f56457f0d19e45b4a52316affbae1b83`];
+  const pages = [`https://api.rawg.io/api/games?key=${API_KEY}`];
   if (name) {
     let videogamesData = [];
 
