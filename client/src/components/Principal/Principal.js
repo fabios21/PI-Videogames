@@ -18,8 +18,8 @@ const Principal = () => {
   useEffect(() => {
     const getVideogames = async () => {
       dispatch(loadingGame(true));
-      const results = await axios.get("http://localhost:3001/videogames");
-      const resultsGenres = await axios.get("http://localhost:3001/genres");
+      const results = await axios.get("/videogames");
+      const resultsGenres = await axios.get("/genres");
       dispatch(addGenres(resultsGenres.data));
       dispatch(addGame(results.data));
       dispatch(loadingGame(false));

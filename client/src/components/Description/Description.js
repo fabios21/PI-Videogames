@@ -15,7 +15,7 @@ const Description = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/videogames/${id}`)
+      .get(`/videogames/${id}`)
       .then((response) => {
         setData({ ...response.data });
         setLoading(false);

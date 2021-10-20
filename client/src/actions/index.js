@@ -16,7 +16,7 @@ export const addGenres = (payload) => {
 
 export const searchGame = (name) => async (dispatch) => {
   const results = await axios.get(
-    `http://localhost:3001/videogames?search=${name}`
+    `/videogames?search=${name}`
   );
   const videogames = await results.data;
 
