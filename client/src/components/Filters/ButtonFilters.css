@@ -1,4 +1,4 @@
-.div-order {
+/* .div-order {
     background-color: rgba(255, 255, 255, 0.473);
     width: 400px;
     height: 35px;
@@ -7,4 +7,17 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-}
+} */
+
+.button {
+    background-color: #0091b6; /* Green */
+    border: none;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 19px;
+    margin: 4px;
+    padding: 3px 10px 3px 10px;
+    border-radius: 3px;padding: 6;
+  }

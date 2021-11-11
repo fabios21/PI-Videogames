@@ -22,7 +22,7 @@ export default function Selectors() {
                 <ButtonFilters />
               </div>
               <div>
-                <Link className="addnewgame" to="/newgame">
+                <Link to="/newgame">
                   <button className="button">Add New Game</button>
                 </Link>
               </div>

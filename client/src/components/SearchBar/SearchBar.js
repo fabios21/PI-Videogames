@@ -49,7 +49,7 @@ const handleSubmit = (e) =>  {
             value={search}
             onChange={(e) => handleInputChange(e)}
           />
-          <button className="search-submit" type="submit"> Search 🔎 </button>
+          <button className="button" type="submit"> Search 🔎 </button>
         </form>
       </div>
     </>

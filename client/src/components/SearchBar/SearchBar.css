@@ -5,12 +5,13 @@
     justify-items: center;
     align-items: center;
     padding: 0px;
+    border-radius: 5px;
 }
 
 .search {
     border: none;
     height: 30px;
-    margin: 0px;
+    margin-left: 10px;
 }
 
 .search-submit {
